@@ -9,8 +9,8 @@
       "name": "code",
       "source": "./",
       "skills": ["./skills/code"],
-      "description": "Coding workflows. Currently: writing Conventional Commits messages from staged changes.",
-      "version": "0.1.1",
+      "description": "Coding skills for everyday dev work.",
+      "version": "0.2.0",
       "license": "MIT",
       "strict": false
     }
