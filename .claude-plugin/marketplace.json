@@ -10,7 +10,7 @@
       "source": "./",
       "skills": ["./skills/code"],
       "description": "Coding workflows. Currently: writing Conventional Commits messages from staged changes.",
-      "version": "0.2.0",
+      "version": "0.3.0",
       "license": "MIT",
       "strict": false
     }
