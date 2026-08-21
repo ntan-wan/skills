@@ -8,7 +8,7 @@ you install only the categories you want.
 
 | Plugin   | Skills   | What it does                                                  |
 | -------- | -------- | ------------------------------------------------------------- |
-| `coding` | `commit` | Writes a Conventional Commits message from your staged changes and commits it after you approve the draft. |
+| `code` | `commit` | Writes a Conventional Commits message from your staged changes and commits it after you approve the draft. |
 
 ## Install
 
@@ -16,7 +16,7 @@ Add the marketplace, then install the plugin you want:
 
 ```
 /plugin marketplace add <path-or-git-url-to-this-repo>
-/plugin install coding@wang-skills
+/plugin install code@wang-skills
 ```
 
 Use the local path (for example `/plugin marketplace add c:\Users\User\skills`) while

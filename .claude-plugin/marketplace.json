@@ -6,11 +6,11 @@
   "description": "A personal collection of custom Claude Code skills, grouped into plugins by category.",
   "plugins": [
     {
-      "name": "coding",
+      "name": "code",
       "source": "./",
-      "skills": ["./skills/coding"],
+      "skills": ["./skills/code"],
       "description": "Coding workflows. Currently: writing Conventional Commits messages from staged changes.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "license": "MIT",
       "strict": false
     }
