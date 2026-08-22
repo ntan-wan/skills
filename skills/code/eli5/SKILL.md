@@ -32,7 +32,7 @@ Explain the thing so a smart person with zero background gets it on the first re
 - Say when you are unsure. Do not invent a tidy story to fill a gap.
 - One comparison, not three. Stacked metaphors confuse more than they help.
 - If they ask a follow-up, go one level deeper, still in plain words. Do not restart from scratch.
-- Also applies to `superpowers:unslop` output rules: no puffery, no AI vocabulary, no em dashes.
+- Also applies to `code:unslop` output rules: no puffery, no AI vocabulary, no em dashes.
 
 ## Example
 
