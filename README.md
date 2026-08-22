@@ -9,6 +9,7 @@ you install only the categories you want.
 | Plugin   | Skills   | What it does                                                  |
 | -------- | -------- | ------------------------------------------------------------- |
 | `code` | `commit` | Writes a Conventional Commits message from your staged changes and commits it after you approve the draft. |
+| `code` | `eli5` | Explains anything in plain words with one everyday comparison, no jargon. |
 
 ## Install
 
