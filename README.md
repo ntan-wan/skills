@@ -12,6 +12,7 @@ you install only the categories you want.
 | `code` | `eli5`   | Explains something in plain words with one everyday comparison.                    |
 | `code` | `roast`  | Interrogates a plan round by round until nothing is left assumed.                   |
 | `code` | `unslop` | Cuts AI tells from writing.                                                        |
+| `learn` | `teach` | Teaches a topic across sessions in a workspace of missions, lessons, and learning records. |
 
 ## Install
 
