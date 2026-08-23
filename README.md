@@ -11,7 +11,7 @@ you install only the categories you want.
 | `code` | `commit` | Drafts a Conventional Commits message from your staged changes, then commits it after you approve. |
 | `code` | `eli5`   | Explains something in plain words with one everyday comparison.                    |
 | `code` | `roast`  | Interrogates a plan round by round until nothing is left assumed.                   |
-| `code` | `tanstack-init` | Scaffolds a new TanStack Start project with shadcn ui, Tailwind CSS, and Neon Postgres. |
+| `code` | `tanstack-init` | Scaffolds a TanStack Start skeleton with the CLI, then builds the app inside it to a fixed architectural spec. |
 | `code` | `unslop` | Cuts AI tells from writing.                                                        |
 | `learn` | `teach` | Teaches a topic across sessions in a workspace of missions, lessons, and learning records. |
 

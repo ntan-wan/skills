@@ -1,24 +1,23 @@
 ---
 name: tanstack-init
-description: Scaffold a new TanStack Start project with the TanStack CLI, defaulting to shadcn ui, Tailwind CSS, and Neon Postgres. Use only when the user asks to start or scaffold a new TanStack Start project, or says "/tanstack-init". Do not use for questions about TanStack, or for work inside a project that already exists.
+description: Scaffold a new TanStack Start project with the TanStack CLI, then build the application inside it against a fixed architectural spec. Defaults to shadcn ui and Tailwind CSS. Use only when the user asks to start or scaffold a new TanStack Start project, or says "/tanstack-init". Do not use for questions about TanStack, or for work inside a project that already exists.
 ---
 
 # TanStack init
 
-Scaffold a new TanStack Start project with `npx @tanstack/cli@latest create`.
-
-Ask one question, run one command. Only widen to the full question set if the
-user turns down the default stack.
+Two phases, in order. The CLI lays down the skeleton, then you build the
+application inside it. Neither phase replaces the other, so do not stop after
+the scaffold and do not hand-roll a skeleton the CLI would have generated.
 
 ## Default stack
 
 - shadcn ui, via the `shadcn` add-on
 - Tailwind CSS, which every standard scaffold enables on its own
-- Neon Postgres, via the `neon` add-on
 
-The CLI covers all three. Nothing gets installed on top.
+Everything else is opt in, databases included. Ask before adding one, and add it
+as a CLI add-on rather than a package.
 
-## Steps
+## Phase 1: scaffold the skeleton
 
 1. **Work out the project name and where it goes.** Scaffold into the current
    directory by default, using `--target-dir .`. Take the name from the user's
@@ -36,16 +35,16 @@ The CLI covers all three. Nothing gets installed on top.
    React unless the user already named a framework.
    - If the command fails, stop and report it. Do not guess add-on IDs and do not
      scaffold.
-   - Match the default stack against what comes back. `shadcn` and `neon` are the
-     expected IDs, and Tailwind should not be there at all because it is automatic.
+   - Match the default stack against what comes back. `shadcn` is the expected ID,
+     and Tailwind should not be there at all because it is automatic.
    - If a default-stack item has no matching add-on, say so and ask the user how
      they want to proceed. Do not pass an ID the catalog did not list, do not
      install a package instead, and do not quietly drop the item.
 
-3. **Offer the default stack.** Show the three items and ask the user to take
-   them or configure the project themselves. Do not scaffold before they answer.
+3. **Offer the default stack.** Show the two items and ask the user to take them
+   or configure the project themselves. Do not scaffold before they answer.
    - Anything the user already specified counts as answered. If they said pnpm,
-     or said they want Solid, or said no database, do not ask about it again.
+     or said they want Solid, or asked for a database, do not ask about it again.
    - If they take the default, go straight to step 5.
 
 4. **If they decline, ask the rest one question at a time.** Ask in the
@@ -66,7 +65,7 @@ The CLI covers all three. Nothing gets installed on top.
    resolved choice:
 
    ```
-   npx @tanstack/cli@latest create <name> --target-dir . --framework React --package-manager <pm> --add-ons shadcn,neon -y
+   npx @tanstack/cli@latest create <name> --target-dir . --framework React --package-manager <pm> --add-ons shadcn -y
    ```
 
    Keep it on one line. A backslash continuation breaks on Windows shells.
@@ -78,14 +77,50 @@ The CLI covers all three. Nothing gets installed on top.
    If the CLI exits with an error, report its output as it came out. Do not
    install anything, and do not rerun with different options on your own.
 
-6. **Report and stop.** Give the user:
-   - where the project is
+## Phase 2: build the application
+
+This is the spec. Every build satisfies it:
+
+> Build a TanStack Start application with file-based TanStack Router routes,
+> validated search params, route loaders, typed server functions, full-document
+> SSR, and streaming. Keep server-only work behind explicit boundaries, choose
+> the appropriate SSR mode per route, and target the deployment runtime without
+> changing the application model.
+
+6. **Read what the CLI left behind first.** The scaffold writes `README.md`,
+   `.cta.json`, and, unless `--no-intent` was passed, an `AGENTS.md` or
+   `CLAUDE.md` wired up by TanStack Intent with skill mappings for the exact
+   libraries it installed. Those files match the installed versions. Trust them
+   over anything you remember about the API.
+
+7. **Work out what the app actually does.** The spec above says how to build, not
+   what to build. Take the subject from the user's request. If they have not said,
+   ask before writing code.
+
+8. **Build it, holding to every clause of the spec.**
+   - File-based routes, one file per route under the router's route directory.
+     Do not hand-register routes the file convention would generate.
+   - Search params validated on the routes that read them. A plain validation
+     function is enough. Zod is not in the default stack, so ask before adding a
+     schema library rather than assuming one.
+   - Route loaders fetch data. Do not fetch in component effects instead.
+   - Server functions typed on both sides, called from routes and loaders.
+   - Full-document SSR, with streaming for the parts that are slow.
+   - Server-only work behind an explicit boundary so it cannot reach a client
+     bundle. Secrets and database access live there and nowhere else.
+   - SSR mode chosen per route, not set once globally and forgotten.
+   - Target the deployment runtime through the CLI's deployment adapter. Do not
+     reshape the application model to suit a host.
+
+9. **Report.** Give the user:
+   - where the project is and what the app does
+   - the routes and server functions you created
    - the stack that actually landed
    - the next command to run, which is `npm run dev` when the scaffold went into
      the current directory, or `cd <name> && npm run dev` when it made a subdirectory
    - anything still needing configuration, by name and location
 
-   Neon writes `.env.example` with `DATABASE_URL` and `DATABASE_URL_POOLER` left
+   A database add-on writes an `.env.example` with the connection variables left
    empty. Point at that file. Never invent a connection string and never ask the
    user to paste one into the chat.
 
@@ -97,10 +132,9 @@ The CLI covers all three. Nothing gets installed on top.
   in your head. The catalog changes.
 - Never pipe keystrokes into the CLI's interactive prompts. Ask in chat, then pass
   flags. Driving the TUI breaks the moment the CLI reorders a prompt.
-- Run no install command of your own. The CLI installs the dependencies. If the
-  catalog cannot cover something the user wants, that is theirs to decide, not a
-  gap to paper over with `npm i`. An add-on wires up config and clients, so a
-  same-named package would leave a project that looks configured and is not.
+- Let the CLI install the dependencies. Do not run an install of your own in phase
+  1, and do not reach for `npm i` in phase 2 without asking. An add-on wires up
+  config and clients, so a same-named package would leave a project that looks
+  configured and is not.
 - Never overwrite a directory that has files in it.
-- Stop once the scaffold is reported. No dev server, no commit, no application
-  code.
+- Do not start a dev server or commit anything unless the user asks.
