@@ -20,11 +20,16 @@ The CLI covers all three. Nothing gets installed on top.
 
 ## Steps
 
-1. **Work out the project name and target directory.** Take them from the user's
-   request if they are already there. Otherwise ask. Then check the target:
-   - If it does not exist or is empty, carry on.
-   - If it has files in it, stop. Say what is already there and ask the user what
-     they want. Never pass `-f` unless they ask for it in so many words.
+1. **Work out the project name and where it goes.** Scaffold into the current
+   directory by default, using `--target-dir .`. Take the name from the user's
+   request if it is there, otherwise ask.
+   - The name is optional alongside `--target-dir .`. Leave it out and the CLI
+     names the package after the current folder. Pass it to set the name yourself.
+   - If the user would rather have the project in a new subdirectory, drop
+     `--target-dir .` and pass the name on its own.
+   - Check the target either way. If it has files in it, stop. Say what is there
+     and ask. Never pass `-f` unless they ask for it in so many words. The CLI
+     refuses a non-empty directory too, but it exits noisily, so check first.
 
 2. **Read the add-on catalog before offering anything.** Run
    `npx @tanstack/cli@latest create --list-add-ons --framework <framework>`, using
@@ -61,13 +66,14 @@ The CLI covers all three. Nothing gets installed on top.
    resolved choice:
 
    ```
-   npx @tanstack/cli@latest create <name> --framework React --package-manager <pm> --add-ons shadcn,neon -y
+   npx @tanstack/cli@latest create <name> --target-dir . --framework React --package-manager <pm> --add-ons shadcn,neon -y
    ```
 
    Keep it on one line. A backslash continuation breaks on Windows shells.
 
-   Add `--target-dir`, `--deployment`, `--toolchain`, `--no-examples`, `--no-git`,
-   or `--no-intent` when the answers call for them.
+   Drop `--target-dir .` if the user asked for a new subdirectory instead. Add
+   `--deployment`, `--toolchain`, `--no-examples`, `--no-git`, or `--no-intent`
+   when the answers call for them.
 
    If the CLI exits with an error, report its output as it came out. Do not
    install anything, and do not rerun with different options on your own.
@@ -75,7 +81,8 @@ The CLI covers all three. Nothing gets installed on top.
 6. **Report and stop.** Give the user:
    - where the project is
    - the stack that actually landed
-   - the next command to run, usually `cd <name> && npm run dev`
+   - the next command to run, which is `npm run dev` when the scaffold went into
+     the current directory, or `cd <name> && npm run dev` when it made a subdirectory
    - anything still needing configuration, by name and location
 
    Neon writes `.env.example` with `DATABASE_URL` and `DATABASE_URL_POOLER` left
