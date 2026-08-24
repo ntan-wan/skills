@@ -14,21 +14,27 @@ run the skill from that directory.
 
 ## Steps
 
-1. **Find the project folder.** Session files live under
-   `~/.claude/projects/<slug>/`, where the slug is the current working directory
-   with the drive colon and every path separator replaced by `-`. So
-   `C:\Users\User\skills` becomes `C--Users-User-skills`.
-   - Match case insensitively and collect every folder that matches. The same
-     project can end up with more than one folder differing only in the case of
-     the drive letter, and each holds real sessions.
+1. **Find the project folder.** Session files live in the Claude home directory,
+   under `.claude/projects/<slug>/`. Resolve the home directory from the
+   environment rather than typing a path, and note that the separator inside it
+   differs by platform.
+   - The slug is the project's absolute path with every character that cannot
+     appear in a folder name replaced by `-`. That covers the path separator on
+     any platform, and the drive colon on Windows.
+   - Do not build the slug by hand and assume it exists. List what is actually in
+     the projects directory and match it against the current working directory,
+     comparing case insensitively. Filesystems differ on case, so a literal
+     comparison misses folders that are really the same project.
+   - Collect every folder that matches, not just the first. One project can end
+     up with more than one folder, and each holds real sessions.
    - If nothing matches, say so and stop. Do not go looking in other folders.
 
 2. **Identify the current session and rule it out.** Every turn appends to the
    running session's transcript, so it is the `.jsonl` with the newest
    modification time across the matched folders.
    - Confirm it. Pick a string that only this conversation could contain, such as
-     the user's most recent message, and grep the candidate file for it.
-   - If the grep does not find it, stop and tell the user you cannot tell which
+     the user's most recent message, and search the candidate file for it.
+   - If the search does not find it, stop and tell the user you cannot tell which
      session is the live one. Do not guess and do not fall back to mtime alone.
      Deleting the running session is the one unrecoverable mistake here.
 
@@ -75,8 +81,8 @@ run the skill from that directory.
 - Never delete without the explicit confirmation from step 5. Showing the list is
   not asking, and asking is not the same as hearing yes.
 - Never expand scope past the current project's folders.
-- Do not delete anything else under `~/.claude`, including settings, plugins, or
-  the projects folder itself. Only `<uuid>.jsonl` files and their sidecar
-  directories.
+- Do not delete anything else in the Claude home directory, including settings,
+  plugins, or the projects folder itself. Only `<uuid>.jsonl` files and their
+  sidecar directories.
 - Do not archive, move, or back up as a substitute. The user asked for deletion.
   If they want a copy first, they will say so.
