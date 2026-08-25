@@ -10,7 +10,10 @@
       "source": "./",
       "skills": ["./skills/code"],
       "description": "Coding skills for everyday dev work.",
-      "version": "0.7.1",
+      "author": {
+        "name": "wang"
+      },
+      "version": "0.7.2",
       "license": "MIT",
       "strict": false
     },
@@ -19,7 +22,10 @@
       "source": "./",
       "skills": ["./skills/learn"],
       "description": "Skills for learning a topic over time.",
-      "version": "0.1.0",
+      "author": {
+        "name": "wang"
+      },
+      "version": "0.1.1",
       "license": "MIT",
       "strict": false
     }
