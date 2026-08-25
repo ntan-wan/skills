@@ -28,6 +28,45 @@
       "version": "0.1.1",
       "license": "MIT",
       "strict": false
+    },
+    {
+      "name": "emil-design",
+      "source": {
+        "source": "github",
+        "repo": "emilkowalski/skills"
+      },
+      "skills": ["./skills"],
+      "description": "Design and animation skills for designers and engineers, by Emil Kowalski.",
+      "author": {
+        "name": "Emil Kowalski",
+        "url": "https://github.com/emilkowalski"
+      },
+      "homepage": "https://github.com/emilkowalski/skills",
+      "version": "0.1.0",
+      "license": "MIT",
+      "strict": false
+    },
+    {
+      "name": "mengto-design",
+      "source": {
+        "source": "github",
+        "repo": "MengTo/Skills"
+      },
+      "skills": [
+        "./agent-skills/web-design",
+        "./agent-skills/ui",
+        "./agent-skills/media",
+        "./agent-skills/game-development"
+      ],
+      "description": "Web design, UI, media, and game development skills, by Meng To.",
+      "author": {
+        "name": "Meng To",
+        "url": "https://github.com/MengTo"
+      },
+      "homepage": "https://github.com/MengTo/Skills",
+      "version": "0.1.0",
+      "license": "MIT",
+      "strict": false
     }
   ]
 }
