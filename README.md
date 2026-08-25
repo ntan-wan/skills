@@ -16,11 +16,13 @@ you install only the categories you want.
 | `code` | `unslop` | Cuts AI tells from writing.                                                        |
 | `learn` | `teach` | Teaches a topic across sessions in a workspace of missions, lessons, and learning records. |
 
-`emil-design` and `mengto-design` are third-party plugins. Their skills live in
-[emilkowalski/skills](https://github.com/emilkowalski/skills) and
-[MengTo/Skills](https://github.com/MengTo/Skills), and are maintained there, not
-here. `mengto-design` pulls four of that repo's categories: web design, ui, media,
-and game development.
+`emil-design`, `mengto-design`, and `elaya-design` are third-party plugins,
+maintained in their own repos rather than here:
+[emilkowalski/skills](https://github.com/emilkowalski/skills),
+[MengTo/Skills](https://github.com/MengTo/Skills), and
+[elayadesign/ai-design-skills](https://github.com/elayadesign/ai-design-skills).
+`mengto-design` pulls four of that repo's categories: web design, ui, media, and
+game development.
 
 ## Install
 

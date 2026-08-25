@@ -67,6 +67,23 @@
       "version": "0.1.0",
       "license": "MIT",
       "strict": false
+    },
+    {
+      "name": "elaya-design",
+      "source": {
+        "source": "github",
+        "repo": "elayadesign/ai-design-skills"
+      },
+      "skills": ["./skills"],
+      "description": "Landing page design skill, by elaya-design.",
+      "author": {
+        "name": "elaya-design",
+        "url": "https://github.com/elayadesign"
+      },
+      "homepage": "https://github.com/elayadesign/ai-design-skills",
+      "version": "0.1.0",
+      "license": "MIT",
+      "strict": false
     }
   ]
 }
