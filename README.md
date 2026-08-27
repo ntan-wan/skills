@@ -24,6 +24,26 @@ maintained in their own repos rather than here:
 `mengto-design` pulls four of that repo's categories: web design, ui, media, and
 game development.
 
+## Also worth trying: openspec
+
+[OpenSpec](https://github.com/Fission-AI/openspec) is a spec-driven workflow: you
+propose a change, it writes the proposal, specs, and tasks, then you apply and
+archive it. Its skills (`openspec-propose`, `openspec-apply-change`,
+`openspec-archive-change`, and more) drive the `openspec` CLI, so install the CLI
+first. It is not a plugin marketplace, so `/plugin marketplace add` will not work
+on it.
+
+```
+npm install -g @fission-ai/openspec@latest
+cd your-project
+openspec init
+```
+
+`openspec init` scaffolds the `openspec/` directory and writes the skills and slash
+commands into that project's `.claude/`. To pull only the skills into a skills.sh
+compatible agent, run `npx skills add Fission-AI/OpenSpec` instead, and install the
+CLI separately.
+
 ## Install
 
 ```
