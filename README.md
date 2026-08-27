@@ -24,7 +24,12 @@ maintained in their own repos rather than here:
 `mengto-design` pulls four of that repo's categories: web design, ui, media, and
 game development.
 
-## Also worth trying: openspec
+## Third-party skills to try
+
+Skills from other repos that are worth installing alongside these. Not part of this
+marketplace, so each has its own install path.
+
+### openspec
 
 [OpenSpec](https://github.com/Fission-AI/openspec) is a spec-driven workflow: you
 propose a change, it writes the proposal, specs, and tasks, then you apply and
