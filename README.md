@@ -9,6 +9,7 @@ you install only the categories you want.
 | Plugin | Skill    | What it does                                                                       |
 | ------ | -------- | ---------------------------------------------------------------------------------- |
 | `code` | `commit` | Drafts a Conventional Commits message from your staged changes, then commits it after you approve. |
+| `code` | `debrief` | Reads your branch's commits and uncommitted changes, then teaches what to take from them. |
 | `code` | `delete-sessions` | Lists this project's Claude sessions, then deletes all but the current one or just the ones you pick. |
 | `code` | `eli5`   | Explains something in plain words with one everyday comparison.                    |
 | `code` | `roast`  | Interrogates a plan round by round until nothing is left assumed.                   |
