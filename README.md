@@ -10,29 +10,37 @@ you install only the categories you want.
 | ------ | -------- | ---------------------------------------------------------------------------------- |
 | `code` | `commit` | Drafts a Conventional Commits message from your staged changes, then commits it after you approve. |
 | `code` | `debrief` | Reads your branch's commits and uncommitted changes, then teaches what to take from them. |
-| `code` | `delete-sessions` | Lists this project's Claude sessions, then deletes all but the current one or just the ones you pick. |
 | `code` | `eli5`   | Explains something in plain words with one everyday comparison.                    |
 | `code` | `roast`  | Interrogates a plan round by round until nothing is left assumed.                   |
-| `code` | `tanstack-init` | Builds a TanStack Start app to a fixed architectural spec: file-based routes, validated search params, loaders, typed server functions, SSR, and streaming. |
+| `code` | `tanstack` | Builds a TanStack Start app to a fixed architectural spec: file-based routes, validated search params, loaders, typed server functions, SSR, and streaming. |
 | `code` | `unslop` | Cuts AI tells from writing.                                                        |
 | `learn` | `teach` | Teaches a topic across sessions in a workspace of missions, lessons, and learning records. |
 
-`emil-design`, `mengto-design`, and `elaya-design` are third-party plugins,
-maintained in their own repos rather than here:
-[emilkowalski/skills](https://github.com/emilkowalski/skills),
-[MengTo/Skills](https://github.com/MengTo/Skills), and
-[elayadesign/ai-design-skills](https://github.com/elayadesign/ai-design-skills).
-`mengto-design` pulls four of that repo's categories: web design, ui, media, and
-game development.
+## Third-party skills
 
-## Third-party skills to try
+Skills maintained in other people's repos, not in this one.
 
-Skills from other repos that are worth installing alongside these. Not part of this
-marketplace, so each has its own install path.
+### Listed in this marketplace
 
-### openspec
+These install like the plugins above, for example
+`/plugin install emil-design@wang-skills`. Each one pulls from its upstream repo, so
+updates come from there.
 
-[OpenSpec](https://github.com/Fission-AI/openspec) is a spec-driven workflow: you
+| Plugin | Source | What it does |
+| ------ | ------ | ------------ |
+| `emil-design` | [emilkowalski/skills](https://github.com/emilkowalski/skills) | Design and animation skills for designers and engineers. |
+| `mengto-design` | [MengTo/Skills](https://github.com/MengTo/Skills) | Web design, UI, media, and game development skills, the four categories this marketplace pulls from that repo. |
+| `elaya-design` | [elayadesign/ai-design-skills](https://github.com/elayadesign/ai-design-skills) | Landing page design skill. |
+| `impeccable` | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | Frontend design skill with `/impeccable` commands such as `critique`, `audit`, and `polish`, plus checks for common AI design patterns. See [impeccable.style](https://impeccable.style/). |
+
+`impeccable` ships its own hooks and a subagent, so this marketplace loads the whole
+upstream plugin instead of pointing at a skills folder.
+
+### Installed separately
+
+#### openspec
+
+[OpenSpec](https://github.com/Fission-AI/OpenSpec) is a spec-driven workflow: you
 propose a change, it writes the proposal, specs, and tasks, then you apply and
 archive it. Its skills (`openspec-propose`, `openspec-apply-change`,
 `openspec-archive-change`, and more) drive the `openspec` CLI, so install the CLI

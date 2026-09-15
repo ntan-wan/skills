@@ -1,9 +1,9 @@
 ---
-name: tanstack-init
-description: Build a TanStack Start application to a fixed architectural spec covering file-based routes, validated search params, loaders, typed server functions, SSR, and streaming. Use when the user asks to start or build a TanStack Start app, or says "/tanstack-init".
+name: tanstack
+description: Build a TanStack Start application to a fixed architectural spec covering file-based routes, validated search params, loaders, typed server functions, SSR, and streaming. Use when the user asks to start or build a TanStack Start app, or says "/tanstack".
 ---
 
-# TanStack init
+# TanStack
 
 Build a TanStack Start application with file-based TanStack Router routes,
 validated search params, route loaders, typed server functions, full-document
