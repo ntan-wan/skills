@@ -13,7 +13,7 @@
       "author": {
         "name": "wang"
       },
-      "version": "0.8.0",
+      "version": "0.9.0",
       "license": "MIT",
       "strict": false
     },
@@ -84,6 +84,21 @@
       "version": "0.1.0",
       "license": "MIT",
       "strict": false
+    },
+    {
+      "name": "impeccable",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/pbakaus/impeccable.git",
+        "path": "plugin"
+      },
+      "description": "Frontend design skill with commands for critique, audit, and polish, plus anti-pattern detection, by Paul Bakaus.",
+      "author": {
+        "name": "Paul Bakaus",
+        "url": "https://github.com/pbakaus"
+      },
+      "homepage": "https://impeccable.style",
+      "license": "Apache-2.0"
     }
   ]
 }
