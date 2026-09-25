@@ -26,7 +26,7 @@ answers it, then teach what is worth taking from it.
 4. Pick 5 to 7 lessons across the lesson kinds, ranked by how much each would change
    the user's next piece of work. Drop the trivia: renames, formatting, dependency
    bumps, generated files.
-5. Write the output in the format below.
+5. Write the output in the format below, ending with the "What to learn next" list.
 
 ## Focus modes
 
@@ -98,6 +98,23 @@ Lead with the scope line and the table, then one section per row.
 Then one section per row, same order, headed by the lesson line: what the code does,
 why it matters, and a short before/after snippet for every "missed better way". Keep
 each section under about 150 words.
+
+Close every debrief with a `## What to learn next` section. It is a study list the
+user can work through after the session ends:
+
+```
+## What to learn next
+
+1. **<Topic name>**: <one line on why it matters for this code>. Look up: <search
+   terms, doc page, or official guide name>. Practice: <one small exercise in this
+   repo, naming the file>.
+```
+
+- List 3 to 5 topics, most useful first.
+- Every topic must trace back to a lesson row. Name the row number in parentheses at
+  the end of its line, for example `(from #2)`.
+- Point to official docs or well known references by name. Never invent a URL.
+- The practice step is something the user does. Do not do it for them.
 
 ## Rules
 
