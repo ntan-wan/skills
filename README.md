@@ -58,6 +58,21 @@ commands into that project's `.claude/`. To pull only the skills into a skills.s
 compatible agent, run `npx skills add Fission-AI/OpenSpec` instead, and install the
 CLI separately.
 
+#### agent-reach
+
+[Agent Reach](https://github.com/Panniantong/Agent-Reach) lets an agent read and
+search the web through one CLI: Twitter, Reddit, YouTube, GitHub, Bilibili,
+XiaoHongShu, and more, with no paid APIs. It ships a `SKILL.md` that the CLI
+registers with your agent. It is not a plugin marketplace, so install it by asking
+your agent to follow the upstream guide:
+
+```
+Help me install Agent Reach: https://raw.githubusercontent.com/Panniantong/agent-reach/main/docs/install.md
+```
+
+Some channels need your cookies or a logged-in browser session (Twitter, XiaoHongShu,
+LinkedIn), so read the guide before granting them.
+
 ## Install
 
 ```
