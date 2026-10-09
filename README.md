@@ -10,8 +10,10 @@ you install only the categories you want.
 | ------ | -------- | ---------------------------------------------------------------------------------- |
 | `code` | `commit` | Drafts a Conventional Commits message from your staged changes, then commits it after you approve. |
 | `code` | `debrief` | Asks what you want to learn (how the codebase works, what recent changes do, or your own topic), then teaches from the code and ends with a list of what to learn next. |
+| `code` | `discover` | Researches how existing software handles a feature, then decides per behaviour whether to copy, improve, compare, or skip it. |
 | `code` | `eli5`   | Explains something in plain words with one everyday comparison.                    |
 | `code` | `roast`  | Interrogates a plan round by round until nothing is left assumed.                   |
+| `code` | `stories` | Turns research and a feature idea into prioritized user stories with acceptance criteria, an MVP cut, and non-goals. |
 | `code` | `tanstack` | Builds a TanStack Start app to a fixed architectural spec: file-based routes, validated search params, loaders, typed server functions, SSR, and streaming. |
 | `code` | `unslop` | Cuts AI tells from writing.                                                        |
 | `learn` | `teach` | Teaches a topic across sessions in a workspace of missions, lessons, and learning records. |
