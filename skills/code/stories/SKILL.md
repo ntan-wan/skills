@@ -9,7 +9,7 @@ Write the user stories that the proposal and specs will be built from.
 
 ## Process
 
-1. Read `research.md` from `discover` if it exists. Every "copy" and "improve" verdict should end up covered by a story.
+1. Read `docs/<feature>/research.md` from `discover` if it exists. Every "copy" and "improve" verdict should end up covered by a story.
 2. Identify personas (usually 1-3). Don't invent roles the product won't have.
 3. Write stories, grouped by persona or capability:
 
@@ -25,7 +25,7 @@ Acceptance criteria
 ```
 
 4. Add three closing sections: **MVP cut** (the Must stories and why), **Non-goals** (what we deliberately won't do), **Open questions**.
-5. Save as `openspec/changes/<name>/stories.md`.
+5. Save as `docs/<feature>/stories.md`, next to `research.md`.
 6. **Checkpoint**: show the stories and wait for the user to confirm, then offer to run `roast` on them before the proposal.
 
 ## Rules

@@ -17,7 +17,7 @@ Find out how existing software already handles the feature, so we build on prove
    - **Improve**: they do it, but there's a clear weakness (cite the complaint or gap).
    - **Compare**: references disagree; lay out the options and recommend one.
    - **Skip**: not relevant to our users or scope.
-5. **Write** `openspec/changes/<name>/research.md` (or `docs/research/<feature>.md` if no change exists yet):
+5. **Write** `docs/<feature>/research.md`:
 
 ```
 ## Framing
