@@ -14,7 +14,7 @@ you install only the categories you want.
 | `code` | `eli5`   | Explains something in plain words with one everyday comparison.                    |
 | `code` | `roast`  | Interrogates a plan round by round until nothing is left assumed.                   |
 | `code` | `stories` | Turns research and a feature idea into prioritized user stories with acceptance criteria, an MVP cut, and non-goals. |
-| `code` | `tanstack` | Builds a TanStack Start app to a fixed architectural spec: file-based routes, validated search params, loaders, typed server functions, SSR, and streaming. |
+| `code` | `tanstack` | Scaffolds a TanStack Start app with the TanStack CLI using fixed defaults: ESLint, Cloudflare, shadcn, Drizzle, Neon, Better Auth, and PostgreSQL, with no demo pages. |
 | `code` | `unslop` | Cuts AI tells from writing.                                                        |
 | `learn` | `teach` | Teaches a topic across sessions in a workspace of missions, lessons, and learning records. |
 
